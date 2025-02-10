@@ -15,31 +15,35 @@
     <div id="response"></div>
 
     <script>
-        async function fetchData() {
-            const input = document.getElementById('userInput').value.trim();
-            const responseDiv = document.getElementById('response');
+    async function fetchData() {
+        const input = document.getElementById('userInput').value.trim();
+        const responseDiv = document.getElementById('response');
 
-            if (!input) {
-                responseDiv.innerText = "Please enter a name.";
-                return;
-            }
-
-            // Encode input for URL safety
-            const queryParam = encodeURIComponent(input);
-            const apiUrl = `https://pointercrate.com/api/v1/players/?name=${queryParam}`;
-
-            try {
-                const response = await fetch(apiUrl, { method: 'GET' });
-                const data = await response.json();
-
-                // Display only data.id if it exists, otherwise show an error
-                responseDiv.innerText = data.id ? `ID: ${data.id}` : "ID not found in response.";
-            } catch (error) {
-                responseDiv.innerText = "Error fetching data.";
-                console.error(error);
-            }
+        if (!input) {
+            responseDiv.innerText = "Please enter a name.";
+            return;
         }
-    </script>
+
+        // Encode input for URL safety
+        const queryParam = encodeURIComponent(input);
+        const apiUrl = `https://your-api-url.com/endpoint?name=${queryParam}`;
+
+        try {
+            const response = await fetch(apiUrl, { method: 'GET' });
+            const data = await response.json();
+
+            // Check if the response is an array and has at least one item
+            if (Array.isArray(data) && data.length > 0) {
+                responseDiv.innerText = `ID: ${data[0].id}`;
+            } else {
+                responseDiv.innerText = "ID not found in response.";
+            }
+        } catch (error) {
+            responseDiv.innerText = "Error fetching data.";
+            console.error(error);
+        }
+    }
+</script>
 
 </body>
 </html>
