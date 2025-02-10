@@ -26,7 +26,7 @@
 
         // Encode input for URL safety
         const queryParam = encodeURIComponent(input);
-        const apiUrl = `https://your-api-url.com/endpoint?name=${queryParam}`;
+        const apiUrl = `https://pointercrate.com/api/v1/players/?name=${queryParam}`;
 
         try {
             const response = await fetch(apiUrl, { method: 'GET' });
