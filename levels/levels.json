@@ -146,5 +146,24 @@
         "approved": true
       }
     ]
+  },
+  {
+    "id": "73667628",
+    "name": "Acheron",
+    "creator": "ryamu",
+    "difficulty": "Extreme Demon",
+    "description": "verified by zoink. \"get ricch or die trying\" -50 cent",
+    "bugfixes": [
+      {
+        "description": "Insert ID here",
+        "approved": false
+      }
+    ],
+    "ldms": [
+      {
+        "description": "Intert ID here",
+        "approved": false
+      }
+    ]
   }
 ]
