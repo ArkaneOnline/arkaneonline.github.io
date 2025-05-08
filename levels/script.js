@@ -3,47 +3,8 @@ let levelsData = [];
 let filteredLevels = [];
 let currentFilter = 'all';
 
-// Default embedded JSON data to ensure the site works without loading external files
-const defaultLevelsData = [
-    {
-        "id": "54166263",
-        "name": "Test Name",
-        "creator": "Test Creator",
-        "difficulty": "Extreme Demon",
-        "description": "A cosmic journey through space and time. Verify code: 284531",
-        "bugfixes": [
-            {
-                "description": "Fixed collision at 35% where player could clip through a block",
-                "approved": true
-            },
-            {
-                "description": "Fixed timing issue at wave section (68%)",
-                "approved": true
-            },
-            {
-                "description": "Removed invisible spike at 42%",
-                "approved": false
-            }
-        ],
-        "ldms": [
-            {
-                "description": "Low Detail Mode (Removes background effects)",
-                "approved": true
-            },
-            {
-                "description": "Ultra Low Detail Mode (Removes all particles and glow)",
-                "approved": true
-            }
-        ]
-    }
-];
-
 // Function to load levels data from various sources with better error handling
 function loadLevelsData() {
-    // First, we'll use the embedded data as a starting point
-    processJsonData(defaultLevelsData);
-
-    // Then try to load from external file (fetch or XHR) to replace the default data
     if (isLocalEnvironment()) {
         // If we're in a local environment, try XMLHttpRequest first
         console.log("Local environment detected, trying XMLHttpRequest for local file access");
@@ -52,7 +13,12 @@ function loadLevelsData() {
         // If hosted, try fetch API first
         tryFetchJSON()
             .catch(error => {
-                console.warn("Fetch failed, using embedded data:", error);
+                console.error("Failed to load levels data:", error);
+                document.getElementById('levels-container').innerHTML = `
+                    <div class="empty-message">
+                        Failed to load levels data. Please try again later.
+                    </div>
+                `;
             });
     }
 }
