@@ -10,6 +10,12 @@ let currentFilter = 'all';
 // Function to load levels data from various sources with better error handling
 function loadLevelsData() {
     console.log('Loading levels data...');
+    const container = document.getElementById('levels-container');
+    if (!container) {
+        console.error('Levels container not found!');
+        return;
+    }
+
     if (isLocalEnvironment()) {
         // If we're in a local environment, try XMLHttpRequest first
         console.log("Local environment detected, trying XMLHttpRequest for local file access");
@@ -19,11 +25,13 @@ function loadLevelsData() {
         tryFetchJSON()
             .catch(error => {
                 console.error("Failed to load levels data:", error);
-                document.getElementById('levels-container').innerHTML = `
-                    <div class="empty-message">
-                        Failed to load levels data. Please try again later.
-                    </div>
-                `;
+                if (container) {
+                    container.innerHTML = `
+                        <div class="empty-message">
+                            Failed to load levels data. Please try again later.
+                        </div>
+                    `;
+                }
             });
     }
 }
@@ -382,16 +390,12 @@ function setupEventListeners() {
 }
 
 // Initialize everything when the DOM is ready
-if (document.readyState === 'loading') {
-    console.log('Document still loading, waiting for DOMContentLoaded');
-    document.addEventListener('DOMContentLoaded', initialize);
-} else {
-    console.log('Document already loaded, initializing immediately');
-    initialize();
-}
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM Content Loaded - Initializing application...');
 
-function initialize() {
-    console.log('Initializing application...');
-    setupEventListeners();
-    loadLevelsData();
-} 
+    // Wait a short moment to ensure all elements are properly loaded
+    setTimeout(() => {
+        setupEventListeners();
+        loadLevelsData();
+    }, 100);
+}); 
