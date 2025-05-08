@@ -1,7 +1,6 @@
 // JSON data structure that will be loaded from external file
 let levelsData = [];
 let filteredLevels = [];
-let currentFilter = 'all';
 
 // Function to load levels data from various sources with better error handling
 function loadLevelsData() {
@@ -80,15 +79,8 @@ function processJsonData(data) {
         filteredLevels = [...levelsData];
         renderLevels();
 
-        // Reset search and filters
+        // Reset search
         document.getElementById('search-input').value = '';
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-filter') === 'all') {
-                btn.classList.add('active');
-            }
-        });
-        currentFilter = 'all';
     } catch (error) {
         const container = document.getElementById('levels-container');
         if (container) {
@@ -268,23 +260,11 @@ function filterLevels() {
     const searchQuery = document.getElementById('search-input').value.toLowerCase();
 
     filteredLevels = levelsData.filter(level => {
-        const matchesSearch =
-            level.name.toLowerCase().includes(searchQuery) ||
+        return level.name.toLowerCase().includes(searchQuery) ||
             level.creator.toLowerCase().includes(searchQuery) ||
-            level.id.toString().includes(searchQuery);
-
-        if (!matchesSearch) return false;
-
-        // Apply category filter
-        if (currentFilter === 'all') return true;
-        if (currentFilter === 'has-bugfixes') {
-            return Array.isArray(level.bugfixes) && level.bugfixes.length > 0 && level.bugfixes.some(fix => fix.approved === true);
-        }
-        if (currentFilter === 'has-ldm') {
-            return Array.isArray(level.ldms) && level.ldms.length > 0 && level.ldms.some(ldm => ldm.approved === true);
-        }
-
-        return true;
+            level.id.toString().includes(searchQuery) ||
+            level.difficulty.toLowerCase().includes(searchQuery) ||
+            (level.description && level.description.toLowerCase().includes(searchQuery));
     });
 
     renderLevels();
@@ -296,22 +276,6 @@ function setupEventListeners() {
     if (searchInput) {
         searchInput.addEventListener('input', filterLevels);
     }
-
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        const filterType = btn.getAttribute('data-filter');
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Update active button
-            filterButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-
-            // Apply filter
-            currentFilter = filterType;
-            filterLevels();
-        });
-    });
 }
 
 // Initialize everything when the DOM is ready
