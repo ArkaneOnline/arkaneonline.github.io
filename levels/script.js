@@ -298,8 +298,12 @@ function filterLevels() {
 
         // Apply category filter
         if (currentFilter === 'all') return true;
-        if (currentFilter === 'has-bugfixes') return level.bugfixes && level.bugfixes.length > 0;
-        if (currentFilter === 'has-ldm') return level.ldms && level.ldms.length > 0;
+        if (currentFilter === 'has-bugfixes') {
+            return level.bugfixes && level.bugfixes.some(fix => fix.approved);
+        }
+        if (currentFilter === 'has-ldm') {
+            return level.ldms && level.ldms.some(ldm => ldm.approved);
+        }
 
         return true;
     });
