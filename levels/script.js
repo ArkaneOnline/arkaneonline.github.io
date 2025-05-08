@@ -153,6 +153,20 @@ function handleFileSelect(event) {
 function renderLevels() {
     const container = document.getElementById('levels-container');
 
+    // Add level count display
+    const countDisplay = document.createElement('div');
+    countDisplay.className = 'level-count';
+    countDisplay.textContent = `Showing ${filteredLevels.length} of ${levelsData.length} levels`;
+
+    // Remove existing count display if it exists
+    const existingCount = document.querySelector('.level-count');
+    if (existingCount) {
+        existingCount.remove();
+    }
+
+    // Insert count display before the container
+    container.parentNode.insertBefore(countDisplay, container);
+
     if (filteredLevels.length === 0) {
         container.innerHTML = `
             <div class="empty-message">
@@ -162,30 +176,38 @@ function renderLevels() {
         return;
     }
 
-    let html = '';
-    filteredLevels.forEach(level => {
-        html += `
-            <div class="level-card">
-                <div class="level-header">
-                    <div class="level-name">${level.name}</div>
-                    <div class="level-id">ID: ${level.id}</div>
-                </div>
-                <div class="level-info">
-                    <div class="level-creator">By ${level.creator}</div>
-                    <div class="level-difficulty" style="background-color: ${getDifficultyColor(level.difficulty)}">
-                        ${level.difficulty}
-                    </div>
-                    ${level.description ? `<div class="level-description">${level.description}</div>` : ''}
-                </div>
-                <div class="modifications">
-                    ${renderBugfixes(level.bugfixes)}
-                    ${renderLDMs(level.ldms)}
-                </div>
-            </div>
-        `;
-    });
+    // Add fade out effect
+    container.style.opacity = '0';
 
-    container.innerHTML = html;
+    setTimeout(() => {
+        let html = '';
+        filteredLevels.forEach(level => {
+            html += `
+                <div class="level-card">
+                    <div class="level-header">
+                        <div class="level-name">${level.name}</div>
+                        <div class="level-id">ID: ${level.id}</div>
+                    </div>
+                    <div class="level-info">
+                        <div class="level-creator">By ${level.creator}</div>
+                        <div class="level-difficulty" style="background-color: ${getDifficultyColor(level.difficulty)}">
+                            ${level.difficulty}
+                        </div>
+                        ${level.description ? `<div class="level-description">${level.description}</div>` : ''}
+                    </div>
+                    <div class="modifications">
+                        ${renderBugfixes(level.bugfixes)}
+                        ${renderLDMs(level.ldms)}
+                    </div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+
+        // Add fade in effect
+        container.style.opacity = '1';
+    }, 150);
 }
 
 // Render the bugfixes section

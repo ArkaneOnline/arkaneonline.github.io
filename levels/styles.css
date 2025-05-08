@@ -82,16 +82,33 @@ header p {
     padding: 8px 15px;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .filter-btn.active {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .filter-btn:hover {
     background-color: #2a2a2a;
+    transform: translateY(-1px);
+}
+
+.filter-btn.active:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.level-count {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
 }
 
 .file-input-container {
@@ -126,18 +143,22 @@ header p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
+    transition: opacity 0.3s ease;
 }
 
 .level-card {
     background-color: var(--card-bg);
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
     border: 1px solid #333;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .level-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .level-header {
