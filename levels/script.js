@@ -1,3 +1,7 @@
+// Immediate debug
+console.log('Script file loaded');
+alert('Script file loaded - check console for more details');
+
 // JSON data structure that will be loaded from external file
 let levelsData = [];
 let filteredLevels = [];
@@ -5,6 +9,7 @@ let currentFilter = 'all';
 
 // Function to load levels data from various sources with better error handling
 function loadLevelsData() {
+    console.log('Loading levels data...');
     if (isLocalEnvironment()) {
         // If we're in a local environment, try XMLHttpRequest first
         console.log("Local environment detected, trying XMLHttpRequest for local file access");
@@ -340,32 +345,53 @@ function filterLevels() {
 }
 
 // Set up event listeners
-window.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM Content Loaded - Setting up event listeners');
-
-    // Load data when page loads
-    loadLevelsData();
+function setupEventListeners() {
+    console.log('Setting up event listeners...');
 
     // Search functionality
-    document.getElementById('search-input').addEventListener('input', filterLevels);
-
-    // File input for local JSON loading
-    document.getElementById('json-file-input').addEventListener('change', handleFileSelect);
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        console.log('Found search input, adding listener');
+        searchInput.addEventListener('input', filterLevels);
+    } else {
+        console.error('Search input not found!');
+    }
 
     // Filter buttons
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        console.log(`Setting up click listener for button: ${btn.getAttribute('data-filter')}`);
-        btn.addEventListener('click', () => {
-            console.log(`Filter button clicked: ${btn.getAttribute('data-filter')}`);
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    console.log(`Found ${filterButtons.length} filter buttons`);
+
+    filterButtons.forEach(btn => {
+        const filterType = btn.getAttribute('data-filter');
+        console.log(`Setting up click listener for button: ${filterType}`);
+
+        btn.addEventListener('click', function (e) {
+            console.log(`Filter button clicked: ${filterType}`);
+            e.preventDefault();
 
             // Update active button
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
 
             // Apply filter
-            currentFilter = btn.getAttribute('data-filter');
+            currentFilter = filterType;
             console.log(`Current filter set to: ${currentFilter}`);
             filterLevels();
         });
     });
-}); 
+}
+
+// Initialize everything when the DOM is ready
+if (document.readyState === 'loading') {
+    console.log('Document still loading, waiting for DOMContentLoaded');
+    document.addEventListener('DOMContentLoaded', initialize);
+} else {
+    console.log('Document already loaded, initializing immediately');
+    initialize();
+}
+
+function initialize() {
+    console.log('Initializing application...');
+    setupEventListeners();
+    loadLevelsData();
+} 
