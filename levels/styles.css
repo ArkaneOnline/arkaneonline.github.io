@@ -31,6 +31,7 @@ header {
     text-align: center;
     margin-bottom: 40px;
     padding: 20px;
+    position: relative;
 }
 
 h1 {
@@ -234,6 +235,23 @@ header p {
     grid-column: 1 / -1;
     padding: 40px;
     color: var(--secondary-color);
+}
+
+.mod-page-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.mod-page-link:hover {
+    background-color: #5a73e8;
 }
 
 @media (max-width: 768px) {
