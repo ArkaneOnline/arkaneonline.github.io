@@ -151,6 +151,7 @@ function handleFileSelect(event) {
 
 // Function to render levels in the container
 function renderLevels() {
+    console.log('Rendering levels...');
     const container = document.getElementById('levels-container');
 
     // Add level count display
@@ -176,8 +177,9 @@ function renderLevels() {
         return;
     }
 
-    // Add fade out effect
+    // Add fade out effect with longer duration
     container.style.opacity = '0';
+    container.style.transform = 'scale(0.95)';
 
     setTimeout(() => {
         let html = '';
@@ -205,9 +207,12 @@ function renderLevels() {
 
         container.innerHTML = html;
 
-        // Add fade in effect
-        container.style.opacity = '1';
-    }, 150);
+        // Add fade in effect with longer duration
+        setTimeout(() => {
+            container.style.opacity = '1';
+            container.style.transform = 'scale(1)';
+        }, 50);
+    }, 300);
 }
 
 // Render the bugfixes section
@@ -321,20 +326,23 @@ function filterLevels() {
         // Apply category filter
         if (currentFilter === 'all') return true;
         if (currentFilter === 'has-bugfixes') {
-            return level.bugfixes && level.bugfixes.some(fix => fix.approved);
+            return Array.isArray(level.bugfixes) && level.bugfixes.length > 0 && level.bugfixes.some(fix => fix.approved === true);
         }
         if (currentFilter === 'has-ldm') {
-            return level.ldms && level.ldms.some(ldm => ldm.approved);
+            return Array.isArray(level.ldms) && level.ldms.length > 0 && level.ldms.some(ldm => ldm.approved === true);
         }
 
         return true;
     });
 
+    console.log(`Filtered to ${filteredLevels.length} levels with filter: ${currentFilter}`);
     renderLevels();
 }
 
 // Set up event listeners
 window.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded - Setting up event listeners');
+
     // Load data when page loads
     loadLevelsData();
 
@@ -346,13 +354,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
+        console.log(`Setting up click listener for button: ${btn.getAttribute('data-filter')}`);
         btn.addEventListener('click', () => {
+            console.log(`Filter button clicked: ${btn.getAttribute('data-filter')}`);
+
             // Update active button
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             // Apply filter
             currentFilter = btn.getAttribute('data-filter');
+            console.log(`Current filter set to: ${currentFilter}`);
             filterLevels();
         });
     });
