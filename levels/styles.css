@@ -230,6 +230,11 @@ header p {
     background-color: var(--denied-color);
 }
 
+.mod-item .denied+span {
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+
 .empty-message {
     text-align: center;
     grid-column: 1 / -1;
