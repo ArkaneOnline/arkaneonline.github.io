@@ -31,7 +31,9 @@ function isLocalEnvironment() {
 // Try to load using fetch API
 async function tryFetchJSON() {
     try {
-        const response = await fetch('levels.json');
+        // Add timestamp to prevent caching
+        const timestamp = new Date().getTime();
+        const response = await fetch(`levels.json?t=${timestamp}`);
         if (!response.ok) {
             throw new Error('Failed to load levels data');
         }
@@ -48,7 +50,9 @@ async function tryFetchJSON() {
 function tryXHRJSON() {
     const xhr = new XMLHttpRequest();
     xhr.overrideMimeType("application/json");
-    xhr.open('GET', 'levels.json', true);
+    // Add timestamp to prevent caching
+    const timestamp = new Date().getTime();
+    xhr.open('GET', `levels.json?t=${timestamp}`, true);
 
     xhr.onload = function () {
         if (xhr.status === 200 || (xhr.status === 0 && xhr.responseText)) {
