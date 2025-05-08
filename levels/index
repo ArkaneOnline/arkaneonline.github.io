@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Dash Level List</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #6e87ff;
+            --secondary-color: #8f8f8f;
+            --approved-color: #4caf50;
+            --denied-color: #f44336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .description {
+            color: var(--secondary-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            color: var(--text-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            font-size: 1rem;
+        }
+
+        .file-upload-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .file-upload-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .file-upload-btn:hover {
+            background-color: #5a73e8;
+        }
+
+        .file-name {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid #333;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .filter-btn:hover {
+            background-color: #2a2a2a;
+        }
+
+        .levels-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .level-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            border: 1px solid #333;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .level-header {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .level-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .level-id {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        .level-info {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .level-creator {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .level-difficulty {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            background-color: #333;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .level-description {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .modifications {
+            padding: 15px;
+        }
+
+        .mod-section {
+            margin-bottom: 15px;
+        }
+
+        .mod-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mod-list {
+            list-style: none;
+        }
+
+        .mod-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mod-item:last-child {
+            border-bottom: none;
+        }
+
+        .mod-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .approved {
+            background-color: var(--approved-color);
+        }
+
+        .denied {
+            background-color: var(--denied-color);
+        }
+
+        .empty-message {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 40px;
+            color: var(--secondary-color);
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .levels-container {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Geometry Dash Level List</h1>
+        <p class="description">A curated collection of Geometry Dash levels with approved bugfixes and LDMs</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="Search levels by name, creator, or ID..." id="search-input">
+    </div>
+
+    <div class="file-upload-container">
+        <label for="json-file-input" class="file-upload-btn">
+            <span>Load Local JSON File</span>
+            <input type="file" id="json-file-input" accept=".json" style="display:none">
+        </label>
+        <div id="file-name-display" class="file-name">No file selected</div>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="has-bugfixes">Has Bugfixes</button>
+        <button class="filter-btn" data-filter="has-ldm">Has LDM</button>
+    </div>
+
+    <div class="levels-container" id="levels-container">
+        <!-- Levels will be populated here dynamically -->
+        <div class="empty-message">Loading levels...</div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Arkane • All rights reserved</p>
+    </footer>
+
+    <script>
+        // JSON data structure that will be loaded from external file
+        let levelsData = [];
+        let filteredLevels = [];
+        let currentFilter = 'all';
+
+        // Default embedded JSON data to ensure the site works without loading external files
+        const defaultLevelsData = [
+            {
+                "id": "54166263",
+                "name": "Test Name",
+                "creator": "Test Creator",
+                "difficulty": "Extreme Demon",
+                "description": "A cosmic journey through space and time. Verify code: 284531",
+                "bugfixes": [
+                    {
+                        "description": "Fixed collision at 35% where player could clip through a block",
+                        "approved": true
+                    },
+                    {
+                        "description": "Fixed timing issue at wave section (68%)",
+                        "approved": true
+                    },
+                    {
+                        "description": "Removed invisible spike at 42%",
+                        "approved": false
+                    }
+                ],
+                "ldms": [
+                    {
+                        "description": "Low Detail Mode (Removes background effects)",
+                        "approved": true
+                    },
+                    {
+                        "description": "Ultra Low Detail Mode (Removes all particles and glow)",
+                        "approved": true
+                    }
+                ]
+            },
+        ];
+
+        // Function to load levels data from various sources with better error handling
+        function loadLevelsData() {
+            // First, we'll use the embedded data as a starting point
+            processJsonData(defaultLevelsData);
+
+            // Then try to load from external file (fetch or XHR) to replace the default data
+            if (isLocalEnvironment()) {
+                // If we're in a local environment, try XMLHttpRequest first
+                console.log("Local environment detected, trying XMLHttpRequest for local file access");
+                tryXHRJSON();
+            } else {
+                // If hosted, try fetch API first
+                tryFetchJSON()
+                    .catch(error => {
+                        console.warn("Fetch failed, using embedded data:", error);
+                    });
+            }
+        }
+
+        // Check if we're in a local file environment
+        function isLocalEnvironment() {
+            return window.location.protocol === 'file:';
+        }
+
+        // Try to load using fetch API
+        async function tryFetchJSON() {
+            try {
+                const response = await fetch('levels.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load levels data');
+                }
+                processJsonData(await response.json());
+                console.log("Successfully loaded data via fetch");
+                return true;
+            } catch (error) {
+                console.warn('Fetch method failed:', error);
+                return false;
+            }
+        }
+
+        // Try to load using XMLHttpRequest (works better for local files in some browsers)
+        function tryXHRJSON() {
+            const xhr = new XMLHttpRequest();
+            xhr.overrideMimeType("application/json");
+            xhr.open('GET', 'levels.json', true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200 || (xhr.status === 0 && xhr.responseText)) {
+                    try {
+                        const data = JSON.parse(xhr.responseText);
+                        processJsonData(data);
+                        console.log("Successfully loaded data via XHR");
+                    } catch (e) {
+                        console.warn("XHR JSON parse error:", e);
+                        // Already using default data, so just log the error
+                    }
+                } else {
+                    console.warn("XHR request failed or returned empty");
+                    // Already using default data, so just log the error
+                }
+            };
+
+            xhr.onerror = function () {
+                console.warn("XHR request error");
+                // Already using default data, so just log the error
+            };
+
+            xhr.send();
+        }
+
+        // Function to process JSON data (used by both remote and local loading)
+        function processJsonData(data) {
+            try {
+                if (!Array.isArray(data)) {
+                    throw new Error('Invalid JSON format: Expected an array of levels');
+                }
+
+                levelsData = data;
+                filteredLevels = [...levelsData];
+                renderLevels();
+
+                // Reset search and filters
+                document.getElementById('search-input').value = '';
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-filter') === 'all') {
+                        btn.classList.add('active');
+                    }
+                });
+                currentFilter = 'all';
+            } catch (error) {
+                console.error('Error processing JSON data:', error);
+                document.getElementById('levels-container').innerHTML = `
+                    <div class="empty-message">
+                        Failed to process levels data. The JSON format appears to be invalid.
+                    </div>
+                `;
+            }
+        }
+
+        // Function to handle local file selection
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            // Update file name display
+            document.getElementById('file-name-display').textContent = file.name;
+
+            // Show loading message
+            document.getElementById('levels-container').innerHTML = `
+                <div class="empty-message">
+                    Loading levels from local file...
+                </div>
+            `;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    processJsonData(data);
+                } catch (error) {
+                    console.error('Error parsing JSON file:', error);
+                    document.getElementById('levels-container').innerHTML = `
+                        <div class="empty-message">
+                            Failed to parse the JSON file. Please make sure it's a valid JSON file with the correct format.
+                        </div>
+                    `;
+                }
+            };
+
+            reader.onerror = function () {
+                document.getElementById('levels-container').innerHTML = `
+                    <div class="empty-message">
+                        Error reading the file. Please try again with a different file.
+                    </div>
+                `;
+            };
+
+            reader.readAsText(file);
+        }
+
+        // Function to render levels in the container
+        function renderLevels() {
+            const container = document.getElementById('levels-container');
+
+            if (filteredLevels.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-message">
+                        No levels match your search criteria.
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            filteredLevels.forEach(level => {
+                html += `
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-name">${level.name}</div>
+                            <div class="level-id">ID: ${level.id}</div>
+                        </div>
+                        <div class="level-info">
+                            <div class="level-creator">By ${level.creator}</div>
+                            <div class="level-difficulty" style="background-color: ${getDifficultyColor(level.difficulty)}">
+                                ${level.difficulty}
+                            </div>
+                            ${level.description ? `<div class="level-description">${level.description}</div>` : ''}
+                        </div>
+                        <div class="modifications">
+                            ${renderBugfixes(level.bugfixes)}
+                            ${renderLDMs(level.ldms)}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Render the bugfixes section
+        function renderBugfixes(bugfixes) {
+            if (!bugfixes || bugfixes.length === 0) {
+                return `
+                    <div class="mod-section">
+                        <div class="mod-title">
+                            <span>Bugfixes</span>
+                        </div>
+                        <div class="mod-list">
+                            <div class="mod-item">No bugfixes available</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            let html = `
+                <div class="mod-section">
+                    <div class="mod-title">
+                        <span>Bugfixes</span>
+                    </div>
+                    <ul class="mod-list">
+            `;
+
+            bugfixes.forEach(fix => {
+                html += `
+                    <li class="mod-item">
+                        <span class="mod-status ${fix.approved ? 'approved' : 'denied'}"></span>
+                        <span>${fix.description}</span>
+                    </li>
+                `;
+            });
+
+            html += `
+                    </ul>
+                </div>
+            `;
+            return html;
+        }
+
+        // Render the LDMs section
+        function renderLDMs(ldms) {
+            if (!ldms || ldms.length === 0) {
+                return `
+                    <div class="mod-section">
+                        <div class="mod-title">
+                            <span>Low Detail Modes</span>
+                        </div>
+                        <div class="mod-list">
+                            <div class="mod-item">No LDMs available</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            let html = `
+                <div class="mod-section">
+                    <div class="mod-title">
+                        <span>Low Detail Modes</span>
+                    </div>
+                    <ul class="mod-list">
+            `;
+
+            ldms.forEach(ldm => {
+                html += `
+                    <li class="mod-item">
+                        <span class="mod-status ${ldm.approved ? 'approved' : 'denied'}"></span>
+                        <span>${ldm.description}</span>
+                    </li>
+                `;
+            });
+
+            html += `
+                    </ul>
+                </div>
+            `;
+            return html;
+        }
+
+        // Get color based on difficulty
+        function getDifficultyColor(difficulty) {
+            const difficultyColors = {
+                'Easy': '#4CAF50',
+                'Normal': '#2196F3',
+                'Hard': '#FF9800',
+                'Harder': '#F44336',
+                'Insane': '#9C27B0',
+                'Easy Demon': '#7986CB',
+                'Medium Demon': '#FFB74D',
+                'Hard Demon': '#F44336',
+                'Insane Demon': '#9C27B0',
+                'Extreme Demon': '#D32F2F'
+            };
+
+            return difficultyColors[difficulty] || '#607D8B';
+        }
+
+        // Filter levels based on search query
+        function filterLevels() {
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+
+            filteredLevels = levelsData.filter(level => {
+                const matchesSearch =
+                    level.name.toLowerCase().includes(searchQuery) ||
+                    level.creator.toLowerCase().includes(searchQuery) ||
+                    level.id.toString().includes(searchQuery);
+
+                if (!matchesSearch) return false;
+
+                // Apply category filter
+                if (currentFilter === 'all') return true;
+                if (currentFilter === 'has-bugfixes') return level.bugfixes && level.bugfixes.length > 0;
+                if (currentFilter === 'has-ldm') return level.ldms && level.ldms.length > 0;
+
+                return true;
+            });
+
+            renderLevels();
+        }
+
+        // Set up event listeners
+        window.addEventListener('DOMContentLoaded', () => {
+            // Load data when page loads
+            loadLevelsData();
+
+            // Search functionality
+            document.getElementById('search-input').addEventListener('input', filterLevels);
+
+            // File input for local JSON loading
+            document.getElementById('json-file-input').addEventListener('change', handleFileSelect);
+
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Apply filter
+                    currentFilter = btn.getAttribute('data-filter');
+                    filterLevels();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
