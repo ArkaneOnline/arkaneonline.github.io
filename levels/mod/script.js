@@ -174,7 +174,8 @@ function addNewLevel() {
 // Function to fetch levels data from the server
 async function fetchLevelsData() {
     try {
-        const response = await fetch('../levels.json');
+        const timestamp = new Date().getTime();
+        const response = await fetch(`../levels.json?t=${timestamp}`);
         if (!response.ok) {
             throw new Error('Failed to load levels data');
         }
