@@ -1,21 +1,182 @@
 [
   {
+    "id": "86407629",
+    "name": "Tidal Wave",
+    "creator": "OniLinkGD",
+    "difficulty": "Extreme Demon",
+    "description": "Drown them",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "109780665",
+    "name": "Nullscapes",
+    "creator": "ItzKiba",
+    "difficulty": "Extreme Demon",
+    "description": "GET OUT OF MY HEAD",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "110816181",
+    "name": "BOOBAWAMBA",
+    "creator": "Akunakunn",
+    "difficulty": "Extreme Demon",
+    "description": "BOOBAWAMBA is equal to {10, 100 [1[1\\1\\12-2] 1 [2\\2-2]2]2} using the array of operator and BEAF it has boobol entries. This is my best level and it has been verified by EastShark",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "116174063",
+    "name": "Every End",
+    "creator": "MindCap",
+    "difficulty": "Extreme Demon",
+    "description": "Never Ending",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "114283297",
+    "name": "andromeda",
+    "creator": "Insxne97",
+    "difficulty": "Extreme Demon",
+    "description": "verified by Taiago // playtested by guillexprex52, kywy, fusion425, swiborg, & others // ty to Xanify, Nemo, Grid, Triplash, Blayne, and more!",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "112313819",
+    "name": "Anathema",
+    "creator": "nikroplays",
+    "difficulty": "Extreme Demon",
+    "description": "After 9 long years, The Dedication Series finally comes to a close. Dedicated to everyone who has supported me along the way. Verified by Whizkid05.",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "89496627",
+    "name": "Avernus",
+    "creator": "PockeWindfish",
+    "difficulty": "Extreme Demon",
+    "description": "By Bo & Kyhros - https://discord.gg/YcNkfHMJGv",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
     "id": "73667628",
     "name": "Acheron",
     "creator": "ryamu",
     "difficulty": "Extreme Demon",
     "description": "verified by zoink. \"get ricch or die trying\" -50 cent",
-    "bugfixes": [
-      {
-        "description": "Insert ID here",
-        "approved": false
-      }
-    ],
-    "ldms": [
-      {
-        "description": "Insert ID here",
-        "approved": false
-      }
-    ]
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "4125776",
+    "name": "Silent clubstep",
+    "creator": "TheRealSailent",
+    "difficulty": "Extreme Demon",
+    "description": "7 years and you still play me?!",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "110815379",
+    "name": "Spectre",
+    "creator": "xander556",
+    "difficulty": "Extreme Demon",
+    "description": "Extreme Demon Megacollab made by 40 amazing creators! Hosted by me. Verified by PersonHuman42 in 106,017 attempts.",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "91351939",
+    "name": "Tunnel of Despair",
+    "creator": "Exen",
+    "difficulty": "Extreme Demon",
+    "description": "Tunnel of Despair. Gameplay by Exen, Deco by ImMaxX1, Verified by Zoink.",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "49896559",
+    "name": "Abyss of Darkness",
+    "creator": "Exen",
+    "difficulty": "Extreme Demon",
+    "description": "(No description provided)",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "86018142",
+    "name": "Kyouki",
+    "creator": "Demishio",
+    "difficulty": "Extreme Demon",
+    "description": "This is Crazy.",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "113599729",
+    "name": "Subterminal Point",
+    "creator": "SyQual",
+    "difficulty": "Extreme Demon",
+    "description": "Also inspired by Maplestory. Verified by PoCle",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "27690100",
+    "name": "Slaughterhouse",
+    "creator": "IcEDCave",
+    "difficulty": "Extreme Demon",
+    "description": "THE GATES HAVE OPENED ONCE AGAIN.",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "107805281",
+    "name": "Menace",
+    "creator": "MannyHeffley",
+    "difficulty": "Extreme Demon",
+    "description": "\"The only truth in this world is that there is no truth.\" Verified by Whizkid. Level and song by me.",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "76962930",
+    "name": "Sakupen Circles",
+    "creator": "TheDiamondPizza",
+    "difficulty": "Extreme Demon",
+    "description": "By Nick24, DrCuber, korewa, Muffy450, Renn241, endevvor, Mzero, NineDice, GhostVandalf. Dedicated to Cursed",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "87665224",
+    "name": "KOCMOC",
+    "creator": "cherryteam",
+    "difficulty": "Extreme Demon",
+    "description": "verified by Trick // verified by Zoink",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "93091893",
+    "name": "Deimos",
+    "creator": "ItsHybrid",
+    "difficulty": "Extreme Demon",
+    "description": "Megacollab made by 20+ people. Sequel to Phobos. Verified by Doggie in 43k attempts. Good luck..",
+    "bugfixes": [],
+    "ldms": []
+  },
+  {
+    "id": "75206202",
+    "name": "Firework",
+    "creator": "TrickGMD",
+    "difficulty": "Extreme Demon",
+    "description": "Here you die",
+    "bugfixes": [],
+    "ldms": []
   }
 ]
