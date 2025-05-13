@@ -106,6 +106,7 @@ h1 {
     border-radius: 10px;
     padding: 20px;
     border: 1px solid #333;
+    margin-bottom: 15px;
 }
 
 .level-header {
@@ -113,11 +114,77 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.level-header:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.level-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.collapse-icon {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.level-content {
+    display: none;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .level-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1.25rem;
     font-weight: 600;
+}
+
+.level-name-input {
+    display: none;
+    background-color: var(--bg-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    padding: 4px 8px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.level-name:hover .level-name-text {
+    display: none;
+}
+
+.level-name:hover .level-name-input {
+    display: block;
+}
+
+.level-name-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(110, 135, 255, 0.2);
 }
 
 .form-group {
@@ -213,10 +280,18 @@ h1 {
     border: none;
     margin: 20px auto;
     display: block;
+    transition: background-color 0.2s ease;
 }
 
 .add-level-btn:hover {
     background-color: #388e3c;
+}
+
+#add-level-bottom-btn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .footer {

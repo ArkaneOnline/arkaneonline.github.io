@@ -58,45 +58,52 @@ function renderLevels() {
     levelsData.forEach((level, index) => {
         const levelCard = document.createElement('div');
         levelCard.className = 'level-card';
+        const isNewLevel = level.isNew; // Check if this is a newly added level
         levelCard.innerHTML = `
-            <div class="level-header">
-                <div class="level-name">Level ${index + 1}</div>
-                <button class="delete-level-btn" onclick="deleteLevel(${index})">Delete Level</button>
-            </div>
-            <div class="form-group">
-                <label>Level ID</label>
-                <input type="text" class="form-control" value="${level.id}" onchange="updateLevel(${index}, 'id', this.value)">
-            </div>
-            <div class="form-group">
-                <label>Level Name</label>
-                <input type="text" class="form-control" value="${level.name}" onchange="updateLevel(${index}, 'name', this.value)">
-            </div>
-            <div class="form-group">
-                <label>Creator</label>
-                <input type="text" class="form-control" value="${level.creator}" onchange="updateLevel(${index}, 'creator', this.value)">
-            </div>
-            <div class="form-group">
-                <label>Difficulty</label>
-                <input type="text" class="form-control" value="${level.difficulty}" onchange="updateLevel(${index}, 'difficulty', this.value)">
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" onchange="updateLevel(${index}, 'description', this.value)">${level.description || ''}</textarea>
-            </div>
-            <div class="modifications">
-                <div class="mod-section">
-                    <div class="mod-title">Bugfixes</div>
-                    <div class="mod-list" id="bugfixes-${index}">
-                        ${renderModifications(level.bugfixes, index, 'bugfixes')}
-                    </div>
-                    <button class="add-mod-btn" onclick="addModification(${index}, 'bugfixes')">Add Bugfix</button>
+            <div class="level-header" onclick="toggleLevelCard(${index})">
+                <div class="level-name">
+                    <input type="text" class="level-name-input" value="${level.name || 'Unnamed Level'}" 
+                           onclick="event.stopPropagation();" 
+                           onchange="updateLevel(${index}, 'name', this.value); this.parentElement.querySelector('.level-name-text').textContent = this.value || 'Unnamed Level';">
+                    <span class="level-name-text">${level.name || 'Unnamed Level'}</span>
                 </div>
-                <div class="mod-section">
-                    <div class="mod-title">Low Detail Modes</div>
-                    <div class="mod-list" id="ldms-${index}">
-                        ${renderModifications(level.ldms, index, 'ldms')}
+                <div class="level-controls">
+                    <button class="delete-level-btn" onclick="event.stopPropagation(); deleteLevel(${index})">Delete Level</button>
+                    <span class="collapse-icon">${isNewLevel ? '▼' : '▶'}</span>
+                </div>
+            </div>
+            <div class="level-content" id="level-content-${index}" style="display: ${isNewLevel ? 'block' : 'none'}">
+                <div class="form-group">
+                    <label>Level ID</label>
+                    <input type="text" class="form-control" value="${level.id}" onchange="updateLevel(${index}, 'id', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Creator</label>
+                    <input type="text" class="form-control" value="${level.creator}" onchange="updateLevel(${index}, 'creator', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Difficulty</label>
+                    <input type="text" class="form-control" value="${level.difficulty}" onchange="updateLevel(${index}, 'difficulty', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" onchange="updateLevel(${index}, 'description', this.value)">${level.description || ''}</textarea>
+                </div>
+                <div class="modifications">
+                    <div class="mod-section">
+                        <div class="mod-title">Bugfixes</div>
+                        <div class="mod-list" id="bugfixes-${index}">
+                            ${renderModifications(level.bugfixes, index, 'bugfixes')}
+                        </div>
+                        <button class="add-mod-btn" onclick="addModification(${index}, 'bugfixes')">Add Bugfix</button>
                     </div>
-                    <button class="add-mod-btn" onclick="addModification(${index}, 'ldms')">Add LDM</button>
+                    <div class="mod-section">
+                        <div class="mod-title">Low Detail Modes</div>
+                        <div class="mod-list" id="ldms-${index}">
+                            ${renderModifications(level.ldms, index, 'ldms')}
+                        </div>
+                        <button class="add-mod-btn" onclick="addModification(${index}, 'ldms')">Add LDM</button>
+                    </div>
                 </div>
             </div>
         `;
@@ -166,9 +173,16 @@ function addNewLevel() {
         difficulty: '',
         description: '',
         bugfixes: [],
-        ldms: []
+        ldms: [],
+        isNew: true // Mark this level as new
     });
     renderLevels();
+
+    // Scroll to the new level
+    const newLevelCard = document.querySelector('.level-card:last-child');
+    if (newLevelCard) {
+        newLevelCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }
 
 // Function to fetch levels data from the server
@@ -195,11 +209,27 @@ async function fetchLevelsData() {
     }
 }
 
+// Add new function to toggle level card visibility
+function toggleLevelCard(index) {
+    const content = document.getElementById(`level-content-${index}`);
+    const header = content.previousElementSibling;
+    const icon = header.querySelector('.collapse-icon');
+
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.textContent = '▼';
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '▶';
+    }
+}
+
 // Set up event listeners
 window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('load-btn').addEventListener('click', loadLevelsData);
     document.getElementById('save-btn').addEventListener('click', saveLevelsData);
     document.getElementById('add-level-btn').addEventListener('click', addNewLevel);
+    document.getElementById('add-level-bottom-btn').addEventListener('click', addNewLevel);
 
     // Automatically fetch levels data when the page loads
     fetchLevelsData();
