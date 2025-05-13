@@ -2,6 +2,63 @@
 let levelsData = [];
 let filteredLevels = [];
 
+// Pagination variables
+const ITEMS_PER_PAGE = 12;
+let currentPage = 1;
+let totalPages = 1;
+
+// Function to get paginated data
+function getPaginatedData() {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    return filteredLevels.slice(startIndex, endIndex);
+}
+
+// Function to update pagination controls
+function updatePaginationControls() {
+    const container = document.getElementById('levels-container');
+    if (!container) return;
+
+    const paginationContainer = document.createElement('div');
+    paginationContainer.className = 'pagination-controls';
+
+    totalPages = Math.ceil(filteredLevels.length / ITEMS_PER_PAGE);
+
+    let paginationHTML = `
+        <button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(1)">
+            First
+        </button>
+        <button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+            Previous
+        </button>
+        <span class="page-info">Page ${currentPage} of ${totalPages}</span>
+        <button class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+            Next
+        </button>
+        <button class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${totalPages})">
+            Last
+        </button>
+    `;
+
+    paginationContainer.innerHTML = paginationHTML;
+
+    // Remove existing pagination controls if they exist
+    const existingPagination = document.querySelector('.pagination-controls');
+    if (existingPagination) {
+        existingPagination.remove();
+    }
+
+    // Insert pagination controls after the container
+    container.parentNode.insertBefore(paginationContainer, container.nextSibling);
+}
+
+// Function to change page
+function changePage(page) {
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    renderLevels();
+}
+
 // Function to load levels data from various sources with better error handling
 function loadLevelsData() {
     const container = document.getElementById('levels-container');
@@ -101,7 +158,14 @@ function renderLevels() {
     // Add level count display
     const countDisplay = document.createElement('div');
     countDisplay.className = 'level-count';
-    countDisplay.textContent = `Showing ${filteredLevels.length} of ${levelsData.length} levels`;
+
+    if (filteredLevels.length > 0) {
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE + 1;
+        const endIndex = Math.min(startIndex + ITEMS_PER_PAGE - 1, filteredLevels.length);
+        countDisplay.textContent = `Showing ${startIndex} to ${endIndex} of ${filteredLevels.length} levels`;
+    } else {
+        countDisplay.textContent = `Showing 0 of ${levelsData.length} levels`;
+    }
 
     // Remove existing count display if it exists
     const existingCount = document.querySelector('.level-count');
@@ -127,7 +191,9 @@ function renderLevels() {
 
     setTimeout(() => {
         let html = '';
-        filteredLevels.forEach(level => {
+        const paginatedData = getPaginatedData();
+
+        paginatedData.forEach(level => {
             html += `
                 <div class="level-card">
                     <div class="level-header">
@@ -156,6 +222,9 @@ function renderLevels() {
             container.style.opacity = '1';
             container.style.transform = 'scale(1)';
         }, 50);
+
+        // Update pagination controls
+        updatePaginationControls();
     }, 300);
 }
 
