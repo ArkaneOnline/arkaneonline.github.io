@@ -178,5 +178,15 @@
     "description": "Here you die",
     "bugfixes": [],
     "ldms": []
+  },
+  {
+    "id": "93917076",
+    "name": "The Lightning Rod",
+    "creator": "Lavatrex",
+    "difficulty": "Extreme Demon",
+    "description": "Solve the mystery of thunderstorms on a rainy day. 264 hours and 101 thousand attempts. My greatest project ever. Love you all! (bug @ 10% fixed 2/23/24)",
+    "bugfixes": [],
+    "ldms": [],
+    "isNew": true
   }
 ]
