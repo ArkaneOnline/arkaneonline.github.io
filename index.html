@@ -10,215 +10,7 @@
     <meta content="https://unavatar.io/x/arkaneonline?ttl=4h" property="og:image" />
     <meta content="#ff9393" name="theme-color" />
     <title>Arkane</title>
-    <style>
-        /* Base Styles */
-        :root {
-            --primary-color: #ff9393;
-            --secondary-color: #f5f5f5;
-            --text-color: #333;
-            --accent-color: #ff6584;
-            --light-accent: #f0eeff;
-            --card-bg: white;
-            --body-bg: #fcfcfc;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        body {
-            background-color: var(--body-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        path {
-            fill: var(--accent-color);
-        }
-
-        .container {
-            max-width: 900px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        /* Profile Section */
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .profile-image-container {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 20px;
-        }
-
-        .blob {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 180px;
-            height: 180px;
-            z-index: 0;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--card-bg);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--text-color);
-        }
-
-        .profile p {
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto 20px;
-            color: #666;
-        }
-
-        /* Links Section */
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-        }
-
-        .link {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            color: var(--text-color);
-        }
-
-        .link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .link-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background-color: var(--light-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-
-        .link-icon i {
-            font-size: 20px;
-            color: var(--primary-color);
-        }
-
-        .link-info h3 {
-            font-size: 1rem;
-            margin-bottom: 3px;
-        }
-
-        .link-info p {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #777;
-        }
-
-        /* Toggle dark mode */
-        .toggle-wrapper {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .dark-mode-toggle {
-            width: 50px;
-            height: 26px;
-            background-color: var(--text-color);
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            padding: 0 3px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .toggle-circle {
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border-radius: 50%;
-            position: absolute;
-            left: 3px;
-            transition: transform 0.3s ease;
-        }
-
-        /* Dark mode styles */
-        body.dark-mode {
-            --body-bg: #1a1a1a;
-            --text-color: #f0f0f0;
-            --card-bg: #2d2d2d;
-            --light-accent: #353340;
-        }
-
-        .dark-mode .link-info p {
-            color: #b0b0b0;
-        }
-
-        .dark-mode .toggle-circle {
-            transform: translateX(24px);
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-
-            .profile h1 {
-                font-size: 1.8rem;
-            }
-
-            .profile p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
@@ -245,7 +37,7 @@
         </div>
 
         <div class="links">
-            <a href="#" class="link">
+            <a href="#" id="discord-link" class="link">
                 <div class="link-icon">
                     <i class="fab fa-discord"></i>
                 </div>
@@ -299,6 +91,15 @@
                     <p>The dashboard for Sirius</p>
                 </div>
             </a>
+            <a href="https://arkane.moe/levels" class="link">
+                <div class="link-icon">
+                    <i class="fas fa-earth-americas"></i>
+                </div>
+                <div class="link-info">
+                    <h3>Fix/LDM Tracker</h3>
+                    <p>A website to track acceptable fixes and LDMs for Geometry Dash levels</p>
+                </div>
+            </a>
         </div>
 
         <footer>
@@ -306,32 +107,7 @@
         </footer>
     </div>
 
-    <script>
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-
-        // Check for saved theme preference or use dark mode by default
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            // Only apply light mode if explicitly saved
-            body.classList.remove('dark-mode');
-        } else {
-            // Default to dark mode
-            body.classList.add('dark-mode');
-        }
-
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-
-            // Save theme preference
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
