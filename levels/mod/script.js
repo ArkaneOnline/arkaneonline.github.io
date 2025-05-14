@@ -58,7 +58,7 @@ function renderLevels() {
     levelsData.forEach((level, index) => {
         const levelCard = document.createElement('div');
         levelCard.className = 'level-card';
-        const isNewLevel = level.isNew; // Check if this is a newly added level
+        const isNewLevel = level.isNew === true; // Explicitly check for true to handle undefined cases
         levelCard.innerHTML = `
             <div class="level-header" onclick="toggleLevelCard(${index})">
                 <div class="level-name">
