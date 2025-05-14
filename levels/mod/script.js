@@ -37,7 +37,13 @@ function loadLevelsData() {
 
 // Function to save levels data to file
 function saveLevelsData() {
-    const dataStr = JSON.stringify(levelsData, null, 2);
+    // Create a deep copy of the data and set isNew to false for all levels
+    const dataToSave = levelsData.map(level => ({
+        ...level,
+        isNew: false
+    }));
+
+    const dataStr = JSON.stringify(dataToSave, null, 2);
     const dataBlob = new Blob([dataStr], { type: 'application/json' });
     const url = URL.createObjectURL(dataBlob);
 
