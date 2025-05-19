@@ -1,6 +1,5 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
-RewriteRule ^$ ./home/index.html [L]
 
 ErrorDocument 404 ./errors/404.html
