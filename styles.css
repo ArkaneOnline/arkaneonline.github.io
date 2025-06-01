@@ -27,10 +27,6 @@ body {
     padding: 20px;
 }
 
-path {
-    fill: var(--accent-color);
-}
-
 .container {
     max-width: 900px;
     width: 100%;
