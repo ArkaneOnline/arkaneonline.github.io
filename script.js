@@ -25,6 +25,7 @@ darkModeToggle.addEventListener('click', () => {
 
 // Discord username copy functionality
 const discordLink = document.getElementById('discord-link');
+const namePopup = document.getElementById('name-popup');
 const DISCORD_USERNAME = 'arkanegd';
 
 // Create notification element
@@ -47,6 +48,26 @@ discordLink.addEventListener('click', async () => {
     } catch (err) {
         console.error('Failed to copy username:', err);
         notification.textContent = 'Failed to copy username';
+        notification.classList.add('show');
+
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 2000);
+    }
+});
+
+namePopup.addEventListener('click', async () => {
+    try {
+
+        // Show notification
+        notification.textContent = 'Also known as Celestia! 🏳️‍⚧️';
+        notification.classList.add('show');
+
+        // Hide notification after 2 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 2000);
+    } catch (err) {
         notification.classList.add('show');
 
         setTimeout(() => {
