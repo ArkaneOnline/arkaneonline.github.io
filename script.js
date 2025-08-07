@@ -1,77 +1,70 @@
-// Dark mode toggle
+// Theme: dark by default, persist preference
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
-
-// Check for saved theme preference or use dark mode by default
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'light') {
-    // Only apply light mode if explicitly saved
-    body.classList.remove('dark-mode');
+  body.classList.remove('dark-mode');
 } else {
-    // Default to dark mode
-    body.classList.add('dark-mode');
+  body.classList.add('dark-mode');
 }
 
-darkModeToggle.addEventListener('click', () => {
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+  });
+}
 
-    // Save theme preference
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-});
-
-// Discord username copy functionality
+// Discord copy + toast
 const discordLink = document.getElementById('discord-link');
 const namePopup = document.getElementById('name-popup');
 const DISCORD_USERNAME = 'arkanegd';
 
-// Create notification element
 const notification = document.createElement('div');
 notification.className = 'notification';
 document.body.appendChild(notification);
 
-discordLink.addEventListener('click', async () => {
-    try {
-        await navigator.clipboard.writeText(DISCORD_USERNAME);
+function showToast(message) {
+  notification.textContent = message;
+  notification.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => notification.classList.remove('show'), 2000);
+}
 
-        // Show notification
-        notification.textContent = 'Discord username copied to clipboard!';
-        notification.classList.add('show');
-
-        // Hide notification after 2 seconds
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 2000);
-    } catch (err) {
-        console.error('Failed to copy username:', err);
-        notification.textContent = 'Failed to copy username';
-        notification.classList.add('show');
-
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 2000);
-    }
+discordLink.addEventListener('click', async (e) => {
+  e.preventDefault();
+  try {
+    await navigator.clipboard.writeText(DISCORD_USERNAME);
+    showToast('Discord username copied to clipboard!');
+  } catch (err) {
+    console.error('Failed to copy username:', err);
+    showToast('Failed to copy username');
+  }
 });
 
-namePopup.addEventListener('click', async () => {
-    try {
+namePopup.addEventListener('click', () => {
+  showToast('Also known as Celestia! 🏳️‍⚧️');
+});
 
-        // Show notification
-        notification.textContent = 'Also known as Celestia! 🏳️‍⚧️';
-        notification.classList.add('show');
+// Subtle 3D tilt interaction for cards and avatar
+const tiltElements = document.querySelectorAll('.tilt');
+const constrain = 14; // lower is more tilt
 
-        // Hide notification after 2 seconds
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 2000);
-    } catch (err) {
-        notification.classList.add('show');
+function applyTilt(event, element) {
+  const rect = element.getBoundingClientRect();
+  const relX = event.clientX - rect.left;
+  const relY = event.clientY - rect.top;
+  const rx = ((relY - rect.height / 2) / rect.height) * -constrain;
+  const ry = ((relX - rect.width / 2) / rect.width) * constrain;
+  element.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+}
 
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 2000);
-    }
-}); 
+function resetTilt(element) {
+  element.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg)';
+}
+
+tiltElements.forEach((el) => {
+  el.addEventListener('mousemove', (e) => applyTilt(e, el));
+  el.addEventListener('mouseleave', () => resetTilt(el));
+  el.addEventListener('mouseenter', () => el.style.willChange = 'transform');
+});

@@ -11,97 +11,82 @@
     <meta content="#ff9393" name="theme-color" />
     <link rel="icon" type="image/png" href="https://unavatar.io/x/arkaneonline?ttl=4h">
     <title>Arkane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
 <body class="dark-mode">
-    <div class="toggle-wrapper">
-        <div class="dark-mode-toggle" id="darkModeToggle">
-            <div class="toggle-circle"></div>
-        </div>
+    <div class="bg-decor">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grain"></div>
     </div>
 
-    <div class="container">
-        <div class="profile">
-            <div class="profile-image-container">
-                <svg class="blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="transFlag" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#5BCEFA;stop-opacity:1" />
-                            <stop offset="25%" style="stop-color:#F5A9B8;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" />
-                            <stop offset="75%" style="stop-color:#F5A9B8;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#5BCEFA;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <path fill="url(#transFlag)"
-                        d="M44.7,-76.4C58.9,-69.2,71.8,-59.8,79.6,-47.1C87.5,-34.3,90.4,-17.2,89.8,-0.3C89.2,16.5,85.1,33,76.7,47.2C68.3,61.5,55.7,73.5,41.1,79.1C26.5,84.7,9.9,83.8,-6.4,82.1C-22.7,80.3,-38.6,77.5,-48.4,68.9C-58.2,60.3,-61.9,45.9,-67.8,31.5C-73.7,17.2,-81.8,2.9,-79.3,-9.8C-76.8,-22.4,-63.8,-33.5,-51.7,-41.7C-39.6,-49.9,-28.3,-55.2,-17.5,-63.9C-6.6,-72.6,3.9,-84.7,17.1,-87.5C30.3,-90.3,46.3,-83.8,44.7,-76.4Z"
-                        transform="translate(100 100)" />
-                </svg>
-                <a href="https://unavatar.io/x/arkaneonline?ttl=4h" target="_blank"><img
-                        src="https://unavatar.io/x/arkaneonline?ttl=4h" alt="Profile Image" class="profile-img"></a>
-            </div>
-            <h1 id="name-popup">Arkane</h1>
-            <p>Geometry Dash player, Demon List & GDDP Leader, "vibe coder", professional idiot.</p>
-        </div>
+    
 
-        <div class="links">
-            <a href="#" id="discord-link" class="link">
-                <div class="link-icon">
-                    <i class="fab fa-discord"></i>
-                </div>
-                <div class="link-info">
+    <div class="container">
+        <header class="hero glass">
+            <div class="avatar-wrap tilt" aria-hidden="true">
+                <div class="avatar-ring"></div>
+                <a href="https://unavatar.io/x/arkaneonline?ttl=4h" target="_blank" rel="noopener noreferrer" class="avatar-link">
+                    <img src="https://unavatar.io/x/arkaneonline?ttl=4h" alt="Arkane avatar" class="profile-img" loading="lazy">
+                </a>
+            </div>
+            <h1 id="name-popup" class="gradient-text">Arkane</h1>
+            <p class="tagline">Geometry Dash player, Demon List & GDDP leader, vibe coder, professional idiot.</p>
+            <div class="cta-row">
+                <a href="https://sirius.arkane.moe" class="btn btn-primary tilt" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-rocket"></i>
+                    <span>Sirius Dashboard</span>
+                </a>
+                <a href="/levels" class="btn btn-secondary tilt">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Fix/LDM Tracker</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="links-grid">
+            <a href="#" id="discord-link" class="card tilt">
+                <div class="card-icon gradient-icon"><i class="fab fa-discord"></i></div>
+                <div class="card-body">
                     <h3>Discord</h3>
-                    <p>@arkanegd - Contact me here (click to copy)</p>
+                    <p>@arkanegd — click to copy</p>
                 </div>
+                <div class="card-arrow"><i class="fas fa-copy"></i></div>
             </a>
-            <a href="https://twitter.com/arkaneonline" class="link">
-                <div class="link-icon">
-                    <i class="fab fa-twitter"></i>
-                </div>
-                <div class="link-info">
+
+            <a href="https://twitter.com/arkaneonline" class="card tilt" target="_blank" rel="noopener noreferrer">
+                <div class="card-icon gradient-icon"><i class="fab fa-twitter"></i></div>
+                <div class="card-body">
                     <h3>Twitter</h3>
                     <p>I post stuff, sometimes</p>
                 </div>
+                <div class="card-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
             </a>
-            <a href="https://youtube.com/@arkanegd" class="link">
-                <div class="link-icon">
-                    <i class="fab fa-youtube"></i>
-                </div>
-                <div class="link-info">
+
+            <a href="https://youtube.com/@arkanegd" class="card tilt" target="_blank" rel="noopener noreferrer">
+                <div class="card-icon gradient-icon"><i class="fab fa-youtube"></i></div>
+                <div class="card-body">
                     <h3>YouTube</h3>
                     <p>Watch my GD completions</p>
                 </div>
+                <div class="card-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
             </a>
-            <a href="https://github.com/ArkaneOnline" class="link">
-                <div class="link-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <div class="link-info">
+
+            <a href="https://github.com/ArkaneOnline" class="card tilt" target="_blank" rel="noopener noreferrer">
+                <div class="card-icon gradient-icon"><i class="fab fa-github"></i></div>
+                <div class="card-body">
                     <h3>GitHub</h3>
                     <p>I code useless projects here</p>
                 </div>
+                <div class="card-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
             </a>
-            <a href="https://sirius.arkane.moe" class="link">
-                <div class="link-icon">
-                    <i class="fas fa-earth-americas"></i>
-                </div>
-                <div class="link-info">
-                    <h3>Sirius</h3>
-                    <p>The dashboard for Sirius</p>
-                </div>
-            </a>
-            <a href="/levels" class="link">
-                <div class="link-icon">
-                    <i class="fas fa-earth-americas"></i>
-                </div>
-                <div class="link-info">
-                    <h3>Fix/LDM Tracker (WIP)</h3>
-                    <p>A website to track acceptable fixes and LDMs for Geometry Dash levels</p>
-                </div>
-            </a>
-        </div>
+        </section>
 
         <footer>
             &copy; 2025 Arkane
