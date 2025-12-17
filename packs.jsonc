@@ -1,0 +1,22 @@
+// This is the list of packs that can be assigned by the bot.
+// This is just an example file, the real file will be stored server-side for easy updating.
+// The bot will make a request to the server to retrieve the latest list of packs and apply them to the users.
+// This file is in JSONC format to allow for comments and ease of use. Take this into account when editing and using this file.
+// JSONC will require a separate JSON parser that supports the JSONC spec.
+{
+    // Packs will be stored in an array following this format:
+    // - "roleID": ["nameOfLevel1", "nameOfLevel2", "nameOfLevel3", "nameOfLevel4", "nameOfLevel5", "etc"]
+    // - roleID is the ID of the role that will be assigned to the user. We should have a comment above the roleID that tells us the name of the role.
+    // - nameOfLevelX is the EXACT name of each level required to be elligible for the pack. Please ensure the names are typed correctly and in the correct array format. (comma separated and in quotes)
+    // Below will be the actual data for the packs. Use it as a reference if you are confused.
+    // Any questions or concerns, please direct them to @arkanegd.
+
+    // 2018 Top 5 Pack:
+    "1029587569626849390": ["Bloodlust", "Spacial Rend", "Plasma Pulse Finale", "Gamma", "Sonic Wave"],
+
+    // Breaking Bad Pack:
+    "1012829506320486400": ["Saul Goodman", "walter white", "Jesse Pinkman", "Gustavo Fring"],
+
+    // ConTrilogy Pack:
+    "1450583173065871472": ["ConTroller", "ConFusion", "ConClusion"]
+}
