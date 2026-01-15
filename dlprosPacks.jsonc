@@ -9,4 +9,205 @@
     // - nameOfLevelX is the EXACT name of each level required to be elligible for the pack. Please ensure the names are typed correctly and in the correct array format. (comma separated and in quotes)
     // Below will be the actual data for the packs. Use it as a reference if you are confused.
     // Any questions or concerns, please direct them to @arkanegd.
+
+    // Legacy Packs
+    // 2018 Top 5 Pack:
+    "1093969188265152612": ["Bloodlust", "Spacial Rend", "Plasma Pulse Finale", "Gamma", "Sonic Wave"],
+
+    // Greek Letter Trilogy Pack:
+    "835241367437312000": ["Gamma", "Sigma", "Omega"],
+
+    // RGB Pack:
+    "835241353981591623": ["Yatagarasu", "Erebus", "Sonic Wave"],
+
+    // Sonic Wave Pack:
+    "835241421371080746": ["Sonic Wave Rebirth", "Sonic Wave", "Generic Wave"],
+
+    // Team N2 Series Pack:
+    "835241124322738226": ["Artificial Ideology", "A Bizarre Phantasm", "The Hell Factory"],
+
+    // The Trilogy Pack:
+    "835241178529398834": ["Cataclysm", "Bloodbath", "aftermath"],
+
+    // Technology Trilogy Pack:
+    "1024894700068556870": ["Artifical Ascent", "Digital Descent", "Cybernetic Crescent"],
+
+    // Pokemon Go Pack:
+    "1340839657583415339": ["Instinct", "Mystic", "Valor"],
+
+    // Bronze Packs
+    // Memory Pack I:
+    "1012933420927688796": ["ConClusion", "Guideless Goobering", "Jupier My Favourite", "The Art of the Blade"],
+
+    // Sequel Pack I:
+    "835242399965380638": ["Omega Interface", "Asterios", "Terminux"],
+
+    // Short Pack:
+    "1012933267604906024": ["ta1LSD0ll", "Cobwebs", "no jokes"],
+
+    // Timing Pack I:
+    "835243169994113041": ["SARY NEVER CLEAR", "RUST", "Shardscapes", "Nabil Let Go", "Neon Skyline"],
+
+    // Silver Packs
+    // Dual Pack I:
+    "835241337762742282": ["SAND SAILOR", "Scrubbabingo Force", "Asterios"],
+
+    // Monochrome Pack I:
+    "1340840616317288530": ["Thinking Space", "Calculator Core", "Shardscapes", "Descent Into Exile"],
+
+    // Solo Pack I:
+    "1012932418967183430": ["Axinie", "shimmer", "Rigel"],
+
+    // Autumn Pack:
+    "1340840760836362250": ["Launchpad Labyrinth", "RUTHLESS", "Pagoda"],
+
+    // Speed Pack I:
+    "835243730277236746": ["NEUTRA", "shimmer", "PROTON LAUNCHER", "Jesse Pinkman"],
+
+    // Knowledge Pack:
+    "1340841604973596672": ["Thinking Space", "Cognition", "Akashic Records"],
+
+    // Rainbow Pack I:
+    "1093967657058967732": ["Lucid Nightmares", "Ykds1479ymdppr", "ATOMIC CANNON Mk II", "Indivine"],
+
+    // Gold Packs
+    // 1.9 GDPS Pack:
+    "1093966545912348784": ["Deadlier Clubstep", "Frost Spirit", "Sky Shredder", "Pandemonium"],
+
+    // Korean Megapack Pack:
+    "835241397530394704": ["Esfera", "Akashic Records", "Terminux"],
+
+    // Remake Pack I:
+    "835244986631061534": ["Calculator Core", "SARY NEVER CLEAR", "The Rupture", "Bloodlust", "Gracefully", "Deimos"],
+
+    // Rainbow Pack II:
+    "835244165406130206": ["Guideless Goobering", "Dry Out Copyable 2", "Crackhead Circles", "Renevant"],
+
+    // Space Pack I:
+    "1340840352973852743": ["Cosmic Cyclone", "Rigel", "Asterios", "Terminux"],
+
+    // XXL Pack I:
+    "835242516081147914": ["Dry Out Copyable 2", "Calculator Core", "Ragnarok"],
+
+    // Sequel Pack II:
+    "835241297257431091": ["Renevant", "ConClusion", "ATOMIC CANNON Mk II", "Ykds1479ymdppr", "RUTHLESS"],
+
+    // Nice Circles Pack I:
+    "1012933021982277682": ["Aerial Gleam", "Crackhead Circles", "Cosmic Cyclone"],
+    
+    // Impossible Pack I:
+    "1012933124960817232": ["Thinking Space", "SARY NEVER CLEAR", "Silent Club"],
+
+    // Platinum Packs
+    // Frostbite Pack:
+    "950593794057863239": ["KOSETSU", "Frost Spirit", "Cold Sweat"],
+
+    // Sunburn Pack:
+    "1340842174702682144": ["Solar Flare", "Critical Heat", "Promethean"],
+
+    // Spring Pack:
+    "1340842246274023434": ["Verdant Landscape", "Shukketsu", "Lotus Flower"],
+
+    // 2-Player Pack:
+    "1340842333402431528": ["Codependence", "BEELINE", "Sides Of My Mind", "Horros", "me when machine gang"],
+
+    // 2020 Top 5 Pack:
+    "1093969814663479376": ["Tartarus", "The Golden", "Zodiac", "Kenos", "Crimson Planet"],
+
+    // Breaking Bad Pack:
+    "1012933215566180374": ["Saul Goodman", "walter white", "Jesse Pinkman"],
+
+    // Dual Pack II:
+    "1340842542111002735": ["Terminal Rampancy", "NEUTRA", "Lotus Flower"],
+
+    // Four Elements Pack:
+    "1340842620242624563": ["Waterfall", "Verdant Landscape", "Aerial Gleam", "Promethean"],
+
+    // Memory Pack II:
+    "1012933440414429184": ["BOOBAWAMBA", "LIMBO", "Lithium"],
+
+    // Mythology Pack:
+    "835241815740383274": ["Tartarus", "Keres", "Promethean", "Ragnarok"],
+
+    // New RGB Pack:
+    "869451367981400094": ["Sonic Wave Infinity", "Tartarus", "The Golden"],
+
+    // The Pack:
+    "835241905704009758": ["The Lightning Rod", "The Hallucination", "The Yangire", "The Golden", "The Art of the Blade", "The Rupture"],
+
+    // Timing Pack II:
+    "1012933153071042570": ["Mayhem", "walter white", "Oblivion", "Hard Machine"],
+
+    // Transportation Trilogy Pack:
+    "953004375054360596": ["COMBUSTION", "Crimson Planet", "Renevant"],
+
+    // XXL Pack II:
+    "835243863584669756": ["Zodiac", "Esfera", "Scream Machine"],
+
+    // Head Mod Pack:
+    "950591856713007134": ["Verdant Landscape", "NEUTRA", "Lotus Flower"],
+
+    // Leader Pack:
+    "950591887272722482": ["Belladonna", "LIMBO", "qoUEO"],
+
+    // Ruby Packs
+    // Bacon Pack:
+    "1093970259381325904": ["Slaughterhouse", "Firework", "arcturus"],
+
+    // Challenge Pack:
+    "1012933380175843420": ["Sakupen Circles", "UNKNOWN", "Promethean", "qoUEO", "Amalgam", "Cobwebs"],
+
+    // Claustrophobia Pack:
+    "1340842903748218961": ["Tunnel of Despair", "MINUSdry", "COMBUSTION", "Oblivion"],
+
+    // Impossible Pack II:
+    "1012936278997737543": ["Silent clubstep", "Slaughterhouse", "Sakupen Circles", "Hard Machine"],
+
+    // Nine Circles Pack II:
+    "1012933048909713438": ["Sakupen Circles", "Solar Flare", "The Hallucination", "Sonic Wave Infinity"],
+
+    // Remake Pack II:
+    "950591964103966790": ["Sakupen Circles", "Edge of Destiny", "SARYYX NEVER CLEAR", "Sonic Wave Infinity", "UNKNOWN", "Kenos"],
+
+    // Sequel Pack III:
+    "953004734376206456": ["The Yangire", "Oblivion", "NETWORK", "Aerial Gleam", "Destruction 19", "Checked Steam"],
+
+    // Monochrome Pack II:
+    "1340841859764719706": ["Nullscapes", "BPATA MPAKA", "NETWORK"],
+
+    // Sequel Pack IV:
+    "1012935778944426004": ["Avernus", "Nullscapes", "Anathema", "Deimos", "poocubed"],
+
+    // Solo Pack II:
+    "1340843051903614986": ["Kyouki", "The Lightning Rod", "Widestep"],
+
+    // Space Pack II:
+    "1340842014236872744": ["KOCMOC", "Deimos", "Solar Flare", "Edge of Destiny", "Sonic Wave Infinity"],
+
+    // Spam Pack:
+    "835244459486216212": ["KOCMOC", "Eyes in the Water", "UNKNOWN", "Checked Steam", "SUPERHATEMEWORLD", "ATOMIC CANNON Mk II", "Silent Club"],
+
+    // The Silent Pack:
+    "1093970461081219112": ["Silent clubstep", "Sinister Silence", "Silent Club"],
+
+    // Video Game Pack:
+    "950593947233832980": ["Subterminal Point", "Trueffet", "Sky Shredder", "Launchpad Labyrinth", "Coral Cave"],
+
+    // Speed Pack II:
+    "835241603840081922": ["andromeda", "Saul Goodman", "Coalescence", "NETWORK"],
+
+    // Rainbow Pack III:
+    "1340843336746926140": ["Anathema", "poocubed", "ORDINARY", "Destruction 19", "DISSONANCE"],
+
+    // Timing Pack III:
+    "836394802404130826": ["Nullscapes", "Silent clubstep", "Firework"],
+
+    // XXL Pack III:
+    "835241765497208884": ["LIMBO", "Sinister Silence", "Damascus"],
+
+    // List Team's Favorite Pack:
+    "1340843455647056025": ["LIMBO", "Deimos", "Kyouki", "Menace", "Edge of Destiny"]
+
+    // Diamond Packs
+    // Pros currently has no diamond packs. You can add them here when they do get added.
 }
