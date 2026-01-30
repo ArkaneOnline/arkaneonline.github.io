@@ -54,51 +54,45 @@
     "640355970463039511": ["Cataclysm", "Bloodbath", "aftermath"],
 
     // Bronze Packs
-    // Knowledge Pack:
-    "1241174576457584711": ["Thinking Space", "Cognition", "Akashic Records"],
-
     // Nine Circles Pack I:
-    "1012829801976967230": ["Indivine", "Cosmic Cyclone", "Rigel"],
+    "1012829801976967230": ["Crackhead Circles", "Axiom Asterism", "Indivine", "Cosmic Cyclone"],
 
     // Sequel Pack I:
-    "1012828715048247337": ["ATOMIC CANNON Mk II", "Cosmic Cyclone", "RUTHLESS"],
+    "1012828715048247337": ["Renevant", "ConClusion", "ATOMIC CANNON Mk II", "Axiom Asterism", "Cosmic Cyclone"],
 
     // Space Pack I:
-    "1120388573988913215": ["Thinking Space", "Cosmic Cyclone", "Rigel"],
+    "1120388573988913215": ["Thinking Space", "Axiom Asterism", "Cosmic Cyclone"],
 
     // Timing Pack I:
-    "1012829391954378832": ["Neon Skyline", "SARY NEVER CLEAR", "Call Me Maybe", "RUST"],
+    "1012829391954378832": ["Promethean", "Cognition", "Neon Skyline"],
 
     // Silver Packs
-    // Korean Megapack Pack:
-    "880756493597691914": ["Esfera", "azure blast", "Gloxinia", "Akashic Records"],
-
     // Lowercase Pack I:
-    "1450588396174184518": ["in this", "azure blast", "shimmer", "meow hard"],
+    "1450588396174184518": ["chrome hearts", "in this", "azure blast", "shimmer"],
 
     // Memory Pack I:
-    "1012826791867592704": ["Guideless Goobering", "Lithium", "ConClusion", "Scrubbabingo Force"],
+    "1012826791867592704": ["Guideless Goobering", "Lithium", "ConClusion"],
 
     // Monochrome Pack I:
     "662339956043284490": ["Dark Dimension", "Thinking Space", "Calculator Core"],
 
     // Rainbow Pack I:
-    "1333830320675360934": ["Renevant", "ATOMIC CANNON Mk II", "Indivine", "Lucid Nightmares"],
+    "1333830320675360934": ["Crackhead Circles", "Dry Out Copyable 2", "Renevant", "ATOMIC CANNON Mk II", "Indivine"],
 
     // Remake Pack I:
     "1012829830523404349": ["Dark Dimension", "Keres", "Calculator Core", "Disconnected Descent", "SARY NEVER CLEAR"],
 
-    // Short Pack:
-    "1012829330713350155": ["VOID", "in this", "ta1LSD0ll"],
+    // Short Pack I:
+    "1012829330713350155": ["VOID", "in this", "Promethean"],
 
     // Solo Pack I:
     "1012828853225410743": ["Starlight Summit", "Axinie", "Widestep", "shimmer"],
 
     // Speed Pack I:
-    "1089729324933976214": ["NEUTRA", "IRIS", "Trotil", "shimmer"],
+    "1089729324933976214": ["NEUTRA", "IRIS", "Trotil", "shimmer", "Axiom Asterism"],
 
     // Timing Pack II:
-    "1012829957040381982": ["Hard Machine", "Lotus Flower", "in this"],
+    "1012829957040381982": ["Starlight Summit", "Hard Machine", "Lotus Flower", "in this"],
 
     // Gold Packs
     // Green Pack:
@@ -108,32 +102,29 @@
     "880760207720976414": ["Oblivion", "Fragile", "Widestep", "Cold Sweat"],
 
     // Industrial Pack I:
-    "1450590854740709396": ["Terminal Rampancy", "Critical Heat", "Scream Machine", "RUST"],
-
-    // Nice Circles Pack II:
-    "1012830057858859119": ["Sonic Wave Infinity", "Aerial Gleam", "Crackhead Circles"],
+    "1450590854740709396": ["Terminal Rampancy", "Critical Heat", "Scream Machine"],
 
     // Remake Pack II:
     "1012829878309109780": ["UNKNOWN", "The Paroxysm of Rage", "Kenos", "Fragile"],
 
     // Rainbow Pack II:
-    "759854648541708368": ["Destruction 19", "Guideless Goobering", "DISSONANCE", "Crackhead Circles", "Dry Out Copyable 2"],
+    "759854648541708368": ["Destruction 19", "Guideless Goobering", "DISSONANCE"],
 
     // Sequel Pack II:
-    "1012829191286313031": ["Destruction 19", "Guideless Goobering", "Judgement Knights", "Renevant", "ConClusion"],
+    "1012829191286313031": ["DISCONNECT", "Destruction 19", "Guideless Goobering", "Judgement Knights"],
 
     // Spring Pack:
     "1293268762098667651": ["Verdant Landscape", "Shukketsu", "Lotus Flower", "in this"],
 
     // Timing Pack III:
-    "1012830244048216144": ["Blood Echo", "Henken", "VOID", "Starlight Summit"],
+    "1012830244048216144": ["Blood Echo", "Time Lapse", "Henken", "VOID"],
 
     // XXL Pack I:
     "759854677868281887": ["Esfera", "Zodiac", "Scream Machine", "Dry Out Copyable 2", "Calculator Core"],
 
     // Platinum Packs
     // 1.9 GDPS Pack:
-    "950578536312356874": ["CONVULSION", "Deadlier Clubstep", "Operation Evolution", "Frost Spirit", "Sky Shredder", "meow hard"],
+    "950578536312356874": ["CONVULSION", "Deadlier Clubstep", "Operation Evolution", "chrome hearts", "Frost Spirit", "Sky Shredder"],
 
     // 2-Player Pack:
     "1241174017763967057": ["Codependence", "BEELINE", "Crystal Crusher", "WOBBLING MACHINE", "We Are Not The Same"],
@@ -142,16 +133,13 @@
     "1088231830169337987": ["Tartarus", "The Golden", "Zodiac", "Kenos", "Crimson Planet"],
 
     // Dual Pack:
-    "1012826860104720394": ["Terminal Rampancy", "NEUTRA", "Lotus Flower", "Scrubbabingo Force", "SAND SAILOR"],
+    "1012826860104720394": ["Decks Dark", "Terminal Rampancy", "Critical Heat", "NEUTRA", "Lotus Flower"],
 
     // Four Elements Pack:
     "1112094242823753829": ["Waterfall", "Verdant Landscape", "Aerial Gleam", "Promethean"],
 
-    // Frostbite Pack:
-    "880759423579062272": ["KOSETSU", "Starlight Summit", "Cold Sweat", "Frost Spirit"],
-
     // Impossible Pack I:
-    "1012829908206100590": ["Tartarus", "Cimmerian Shade", "Hard Machine", "Thinking Space", "SARY NEVER CLEAR"],
+    "1012829908206100590": ["Cimmerian Shade", "Tartarus", "Hard Machine", "Thinking Space"],
 
     // Leader Pack:
     "880760207557423155": ["Belladonna", "Lotus Flower", "qoUEO"],
@@ -160,7 +148,7 @@
     "1012826841410719794": ["Operation Evolution", "THE JET ENGINE", "Viprin UFO", "limbo but uwu ig idk"],
 
     // Monochrome Pack II:
-    "1237195405922533457": ["BPATA MPAKA", "Cimmerian Shade", "UNKNOWN", "NETWORK"],
+    "1237195405922533457": ["BPATA MPAKA", "Cimmerian Shade", "NETWORK", "UNKNOWN", "DISCONNECT"],
 
     // Mythology Pack:
     "1012829700911009812": ["Tartarus", "Keres", "Promethean"],
@@ -168,26 +156,35 @@
     // New RGB Pack:
     "864111655544422412": ["Sonic Wave Infinity", "Tartarus", "The Golden"],
 
+    // Nice Circles Pack II:
+    "1012830057858859119": ["The Hallucination", "Solar Flare", "Sonic Wave Infinity", "Aerial Gleam"],
+
+    // Rainbow Pack III:
+    "1464400489536815134": ["Wavterminal", "ATOMIC CANNON Mk III", "Graceful"],
+
     // Remake Pack III:
     "1450594682252951592": ["Apocalyptic Trilogy", "Edge of Destiny", "SARYYX NEVER CLEAR", "Sonic Wave Infinity", "Natural Disaster"],
 
     // Sequel Pack III:
-    "1012829287050661918": ["ATOMIC CANNON Mk III", "NETWORK", "Checked Steam", "Aerial Gleam", "Blood Echo"],
+    "1012829287050661918": ["ATOMIC CANNON Mk III", "NETWORK", "Checked Steam", "Blood Echo", "Aerial Gleam"],
 
     // Space Pack II:
-    "1237183695719239730": ["Edge of Destiny", "Solar Flare", "Sonic Wave Infinity", "Starlit Stroll"],
+    "1237183695719239730": ["Edge of Destiny", "Solar Flare", "Decks Dark", "Sonic Wave Infinity", "Starlit Stroll"],
 
     // Sunburn Pack:
     "1293268489796321390": ["Solar Flare", "Critical Heat", "Promethean"],
 
     // The Pack I:
-    "835221609563422820": ["THE JET ENGINE", "The Golden", "The Paroxysm of Rage"],
+    "835221609563422820": ["The Yangire", "THE JET ENGINE", "The Golden", "The Paroxysm of Rage"],
 
     // Timing Pack IV:
-    "1450595220541407244": ["Mayhem", "walter white", "SARYYX NEVER CLEAR", "Oblivion"],
+    "1450595220541407244": ["Mayhem", "walter white", "SARYYX NEVER CLEAR", "Oblivion", "UNKNOWN"],
 
     // Transportation Trilogy Pack:
     "950930694455054357": ["COMBUSTION", "Renevant", "Crimson Planet"],
+
+    // Vocalist Pack I:
+    "1464400933898289203": ["Sinister Silence", "chrome hearts", "Lotus Flower", "Renevant"],
 
     // XXL Pack II:
     "759854688970473473": ["LIMBO", "Sinister Silence", "Damascus"],
@@ -205,6 +202,12 @@
     // Clubstep Pack:
     "1450596230211174460": ["Silent clubstep", "Sevvend Clubstep", "Deadlier Clubstep"],
 
+    // Epileptic Pack:
+    "1464399754967515188": ["CHIL", "Wavterminal", "Crackhead Circles"],
+
+    // Frostbite Pack:
+    "880759423579062272": ["KOSETSU", "Snowbound", "Starlight Summit", "Cold Sweat", "Frost Spirit"],
+
     // Impossible Pack II:
     "1012830187160871022": ["Subsuming Vortex", "Silent clubstep", "Abyss of Darkness", "Slaughterhouse", "Sakupen Circles"],
 
@@ -212,16 +215,19 @@
     "1450596452698165279": ["andromeda", "poocubed", "walter white", "arcturus"],
 
     // Nine Circles Pack III:
-    "1450596589717684285": ["Subsuming Vortex", "Defeated Circles", "Sakupen Circles", "Solar Flare", "The Hallucination"],
+    "1450596589717684285": ["Subsuming Vortex", "Defeated Circles", "Sakupen Circles"],
 
-    // Rainbow Pack III:
-    "1333830765938737183": ["Anathema", "poocubed", "ORDINARY", "ATOMIC CANNON Mk III"],
+    // Rainbow Pack IV:
+    "1333830765938737183": ["Anathema", "CHIL", "poocubed", "Infinite Chaos", "ORDINARY"],
 
     // Sequel Pack IV:
-    "1012830148762025994": ["Deimos", "poocubed", "The Yangire", "Midnight", "Oblivion"],
+    "1012830148762025994": ["Deimos", "poocubed", "Infinite Chaos", "The Yangire", "Midnight", "Oblivion"],
+
+    // Short Pack II:
+    "1464400052972683507": ["Sakupen Circles", "COMBUSTION", "UNKNOWN"],
 
     // Solo Pack II:
-    "1176688273305899018": ["Kyouki", "The Lightning Rod", "Collapse"],
+    "1176688273305899018": ["Kyouki", "The Lightning Rod", "CHIL", "Collapse"],
 
     // Space Pack III:
     "1450597153243398164": ["andromeda", "KOCMOC", "Deimos"],
@@ -229,20 +235,23 @@
     // Spam Pack:
     "1046455731404144670": ["KOCMOC", "Eyes in the Water", "Midnight", "UNKNOWN", "Checked Steam", "ATOMIC CANNON Mk II"],
 
+    // Terminal Pack:
+    "1464400318388240698": ["Subterminal Point", "Wavterminal", "Terminal Rampancy"],
+
     // The Pack II:
-    "1450597289885303018": ["The Lightning Rod", "The Hallucination", "The Plunge", "The Yangire"],
+    "1450597289885303018": ["The Lightning Rod", "The Salt Factory", "The Hallucination", "The Plunge"],
 
     // The Silent Pack:
     "1088232292310319186": ["Silent clubstep", "Silentlocked", "Sinister Silence"],
 
     // Timing Pack V:
-    "1450597475122544650": ["Firework", "MINUSdry", "Deadlier Clubstep", "Gaggatronda"],
+    "1450597475122544650": ["Firework", "The Salt Factory", "MINUSdry", "Deadlier Clubstep", "Gaggatronda"],
 
     // Video Game Pack:
     "950578364605952051": ["Subterminal Point", "Trueffet", "Starlight Summit", "Frost Spirit", "Sky Shredder"],
 
-    // Vocalist Pack:
-    "1450597765783621672": ["Anathema", "Gaggatronda", "ORDINARY", "Sinister Silence", "Lotus Flower", "Renevant", "Call Me Maybe"],
+    // Vocalist Pack II:
+    "1450597765783621672": ["Anathema", "Gaggatronda", "Decks Dark", "ORDINARY"],
 
     // "List Team's Favorite" Pack:
     "1289161676477960222": ["LIMBO", "Deimos", "Kyouki", "Menace", "Edge of Destiny"],
@@ -255,7 +264,7 @@
     "1176688434144886804": ["Amethyst", "Tunnel of Despair", "MINUSdry", "COMBUSTION", "Oblivion"],
 
     // Industrial Pack II:
-    "1450599112566374572": ["BOOBAWAMBA", "COMBUSTION", "Mayhem"],
+    "1450599112566374572": ["BOOBAWAMBA", "The Salt Factory", "COMBUSTION", "Mayhem"],
 
     // Memory Pack III:
     "1450599116882317537": ["BOOBAWAMBA", "CONVULSION", "LIMBO"],
@@ -264,7 +273,7 @@
     "1450599121390927973": ["Thinking Space II", "Nullscapes", "Firework", "Loops of Fury"],
 
     // Remake Pack IV:
-    "1450599125732032775": ["Amethyst", "Abyss of Darkness", "Defeated Circles", "Sakupen Circles", "Silentlocked"],
+    "1450599125732032775": ["Amethyst", "Quanteuse processing", "Abyss of Darkness", "Defeated Circles", "Sakupen Circles", "Silentlocked"],
 
     // Sequel Pack V:
     "1450599131193151733": ["Thinking Space II", "Nullscapes", "Anathema", "Avernus", "Subterminal Point"],
@@ -273,11 +282,11 @@
     "1450599207030358117": ["Nullscapes", "Every End", "Viprin UFO", "Starlight Summit", "Swing Swing"],
 
     // Speed Pack II:
-    "835220883479986227": ["Tidal Wave", "andromeda", "Saul Goodman", "Coalescence", "NETWORK"],
+    "835220883479986227": ["Tidal Wave", "andromeda", "Snowbound", "Saul Goodman", "Coalescence", "NETWORK"],
 
     // Timing Pack VI:
     "1450599212847726642": ["Nullscapes", "Every End", "Silent clubstep", "Subterminal Point"],
 
     // XXL Pack III:
-    "1088232980784369774": ["Flamewall", "Tidal Wave", "Every End", "Menace"]
+    "1088232980784369774": ["Flamewall", "Every End", "Menace", "Apocalyptic Trilogy"]
 }
